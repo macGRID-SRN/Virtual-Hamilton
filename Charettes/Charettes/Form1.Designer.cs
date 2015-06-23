@@ -35,7 +35,7 @@
             // 
             // btnstart
             // 
-            this.btnstart.Location = new System.Drawing.Point(178, 101);
+            this.btnstart.Location = new System.Drawing.Point(281, 225);
             this.btnstart.Name = "btnstart";
             this.btnstart.Size = new System.Drawing.Size(129, 63);
             this.btnstart.TabIndex = 0;
@@ -46,7 +46,7 @@
             // combogridselect
             // 
             this.combogridselect.FormattingEnabled = true;
-            this.combogridselect.Location = new System.Drawing.Point(12, 62);
+            this.combogridselect.Location = new System.Drawing.Point(115, 104);
             this.combogridselect.Name = "combogridselect";
             this.combogridselect.Size = new System.Drawing.Size(455, 33);
             this.combogridselect.TabIndex = 1;
@@ -55,7 +55,7 @@
             // lblgrid
             // 
             this.lblgrid.AutoSize = true;
-            this.lblgrid.Location = new System.Drawing.Point(173, 34);
+            this.lblgrid.Location = new System.Drawing.Point(276, 35);
             this.lblgrid.Name = "lblgrid";
             this.lblgrid.Size = new System.Drawing.Size(136, 25);
             this.lblgrid.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 335);
+            this.ClientSize = new System.Drawing.Size(689, 449);
             this.Controls.Add(this.lblgrid);
             this.Controls.Add(this.combogridselect);
             this.Controls.Add(this.btnstart);

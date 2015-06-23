@@ -19,7 +19,7 @@ namespace Charettes
         public FormSelectGrid()
         {
             InitializeComponent();
-            _grid = null;
+            _grid = new Grid();
             InitializeComboBox();
 
         }
@@ -33,7 +33,7 @@ namespace Charettes
         {
             if (_grid != null)
             {
-                //Continue
+                StartCapture();
             }
             else
             {
@@ -48,13 +48,22 @@ namespace Charettes
 
         private void FormSelectGrid_Load(object sender, EventArgs e)
         {
-            switch(combogridselect.Text)
+
+        }
+
+        private void StartCapture()
+        {
+            GridMapper gridMapper;
+            switch (combogridselect.Text)
             {
                 case MainEmerson:
+                    gridMapper = new GridMapper(_grid);
                     break;
                 case MohawkGarth:
+                    gridMapper = new GridMapper(_grid);
                     break;
                 case BartonKennelworth:
+                    gridMapper = new GridMapper(_grid);
                     break;
             }
         }

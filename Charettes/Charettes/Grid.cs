@@ -15,7 +15,7 @@ namespace Charettes
 
     public class Grid
     {
-        public Grid(GridName gridName)
+        public Grid()
         {
             
         }
