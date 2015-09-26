@@ -7,6 +7,10 @@
  */
 
 #include <IRremote.h>
+#define PERIOD 100
+#define HALF_PERIOD PERIOD/2
+#define ON_TIME PERIOD - HALF_PERIOD/2 + 5
+#define DEVICE_ID 1
 
 int RECV_PIN = 11;
 int RELAY_PIN = 4;
@@ -41,10 +45,10 @@ void dump(decode_results *results) {
     Serial.print(" (");
     Serial.print(results->bits, DEC);
     Serial.println(" bits)");
-    if(results->value == 2){
+    if(results->value == DEVICE_ID){
       digitalWrite(RELAY_PIN,HIGH);
-      delay(1500);
-       digitalWrite(RELAY_PIN,LOW);
+      delay(ON_TIME);
+      digitalWrite(RELAY_PIN,LOW);
     }
   }
 }
@@ -55,6 +59,9 @@ void setup()
   pinMode(13, OUTPUT);
     Serial.begin(9600);
     Serial.println("test");
+    digitalWrite(RELAY_PIN,HIGH);
+      delay(2000);
+      digitalWrite(RELAY_PIN,LOW);
   irrecv.enableIRIn(); // Start the receiver
 }
 
@@ -65,7 +72,7 @@ void loop() {
   if (irrecv.decode(&results)) {
     // If it's been at least 1/4 second since the last
     // IR received, toggle the relay
-    if (millis() - last > 250) {
+    if (millis() - last > HALF_PERIOD) {
       on = !on;
       digitalWrite(RELAY_PIN, on ? HIGH : LOW);
       digitalWrite(13, on ? HIGH : LOW);
