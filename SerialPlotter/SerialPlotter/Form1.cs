@@ -173,6 +173,15 @@ namespace SerialPlotter
                     try
                     {
                         currentId = int.Parse(ParsedSerial[0]);
+                        if (currentId == 1)
+                        {
+                            if (!SendData.isSending)
+                            {
+                                SendData.isSending = true;
+                                SendData.Send();
+                                SendData.isSending = false;
+                            }
+                        }
                     }
                     catch
                     {
@@ -189,6 +198,13 @@ namespace SerialPlotter
                     if (blobSize < 3)
                     {
                         blobSize = 3;
+                    }
+
+                    var physicalObject = GridDataObject.physicalObjects.FirstOrDefault(l => l.Id == currentId);
+                    if (physicalObject != null)
+                    {
+                        physicalObject.x = blobX;
+                        physicalObject.y = blobY;
                     }
 
                 }
@@ -228,7 +244,6 @@ namespace SerialPlotter
 
                 }
                 UpdateChart(CameraData);
-
             }
 
         }
