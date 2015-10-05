@@ -4712,8 +4712,12 @@ PNA4602 and related receivers
 <wire x1="40.64" y1="175.26" x2="40.64" y2="170.18" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$13" class="0">
+<net name="N$17" class="0">
 <segment>
+<pinref part="JP3" gate="A" pin="1"/>
+<wire x1="22.86" y1="152.4" x2="22.86" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="149.86" x2="33.02" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="149.86" x2="33.02" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="B" pin="4"/>
 <wire x1="38.1" y1="170.18" x2="38.1" y2="172.72" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="172.72" x2="45.72" y2="172.72" width="0.1524" layer="91"/>
@@ -4721,16 +4725,8 @@ PNA4602 and related receivers
 <pinref part="JP2" gate="B" pin="3"/>
 <wire x1="45.72" y1="152.4" x2="38.1" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="152.4" x2="38.1" y2="154.94" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$17" class="0">
-<segment>
-<pinref part="JP3" gate="A" pin="1"/>
-<wire x1="22.86" y1="152.4" x2="22.86" y2="149.86" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="149.86" x2="30.48" y2="149.86" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="149.86" x2="30.48" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="B" pin="1"/>
-<wire x1="30.48" y1="154.94" x2="35.56" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="144.78" x2="38.1" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="144.78" x2="38.1" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
