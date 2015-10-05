@@ -4,7 +4,7 @@
 
 // Steve Hobley 2009 - www.stephenhobley.com
 
-#define PERIOD 100
+#define PERIOD 200
 #define HALF_PERIOD PERIOD/2
 #include <Wire.h>
 #include <PVision.h>
@@ -23,11 +23,16 @@ void setup()
 void loop()
 {
 
-  value ^= 3;
+  value++;
+  if(value >= 6){
+    value = 1;
+  }
   irsend.sendNEC(value, 16);
-  Serial.println(value);
   delay(HALF_PERIOD);
+
+  Serial.println(value);
   result = ircam.read();
+
   
   if (result & BLOB1)
   {
